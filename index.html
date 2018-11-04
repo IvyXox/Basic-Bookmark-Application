@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Bookmarks</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bookmarks</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Bookmark your favorite Sites</h1>
+            <p class="lead">Here you can save and organize all your favorite Websites and Links.</p>
+            <br/>
+            <form id="myForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="siteName" placeholder="Website Name">
+                </div>
+                <div class="form-group">
+                    <label>Link</label>
+                    <input type="text" class="form-control" id="siteUrl" placeholder="Website URL">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
