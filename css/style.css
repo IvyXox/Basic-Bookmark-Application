@@ -1,8 +1,8 @@
 .shorter {
-    max-width: 800px;
+    max-width: 1000px;
 }
 .wrapper {
-    padding: 2% 5%;
+    padding: 3% 4%;
 }
 .footer {
     padding: 4%;
@@ -26,7 +26,7 @@
 }
 @media screen and (min-width: 1200px) {
     .wrapper {
-        padding: 1% 12%;
+        padding: 1% 14%;
     }
     .footer {
         padding: 10%
