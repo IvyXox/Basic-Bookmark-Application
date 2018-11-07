@@ -4,9 +4,28 @@
 .wrapper {
     padding: 3% 4%;
 }
+.well{
+    background-color: #e2e0e0;
+    border: solid rgba(218, 217, 217, 0.733) 1px;
+}
+.btn:hover {
+    background-color: rgb(188, 228, 253);
+}
+.btn{
+    background-color: rgb(202, 232, 241);
+}
 .footer {
     padding: 4%;
     color: darkgrey;
+}
+.trashIcon {
+    color: darkred;
+    font-size: 0.9em;
+}
+.trashIcon:hover{
+    color: red;
+    transition: 3ms;
+    /*transform: scale(1.1);*/
 }
 @media screen and (min-width: 768px) {
     .wrapper {
