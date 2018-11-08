@@ -32,9 +32,35 @@ function saveBookmark(e){
         // reset to localStorage
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
+
+    // clear form
+    document.getElementById('myForm').reset();
+
+    // refetch bookmarks
+    fetchBookmarks();
+
     //prevent form-submit
     e.preventDefault();
 }
+
+// delete bookmark
+function deleteBookmark(url){
+    // get bookmarks from localStorage
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    // loop through the bookmarks
+    for(let i =0;i < bookmarks.length;i++){
+      if(bookmarks[i].url == url){
+        // remove
+        bookmarks.splice(i, 1);
+      }
+    }
+    // reset back to localStorage
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  
+    // refetch bookmarks
+    fetchBookmarks();
+}
+  
 
 // fetch bookmarks
 function fetchBookmarks() {
@@ -55,9 +81,34 @@ function fetchBookmarks() {
                                     
                                     ' <a class="btn btn-default btnVisit" target="_blank" href="'+url+'">Visit</a>'+
 
-                                    ' <a href="#"><i class="far fa-trash-alt trashIcon"></i></a>'+
+                                    ' <a onclick="deleteBookmark(\''+url+'\')" href="#"><i class="far fa-trash-alt trashIcon"></i></a>'+
 
                                     '</h3>'+
                                     '</div>';
     }
 }
+
+// validate form
+function validateForm(siteName, siteUrl){
+    if(!siteName || !siteUrl){
+      alert('Please fill in the form');
+      return false;
+    }
+  
+    let expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+    let regex = new RegExp(expression);
+  
+    if(!siteUrl.match(regex)){
+      alert('Please use a valid URL');
+      return false;
+    }
+  
+    return true;
+  }
+  
+  function addhttp(url) {
+    if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
+    return url;
+  }
