@@ -76,10 +76,12 @@ function fetchBookmarks() {
         let name = bookmarks[i].name;
         let url = bookmarks[i].url;
 
-        bookmarksResults.innerHTML += '<div                                           class="well shadow p-3 mb-5 bg-light rounded"">'+
+        bookmarksResults.innerHTML += '<div class="well shadow p-3 mb-5 bg-light rounded"">'+
                                     '<h3>' +name+
-                                    
-                                    ' <a class="btn btn-default btnVisit" target="_blank" href="'+url+'">Visit</a>'+
+                                    // I added noreferrer becouse creates security gap
+                                    // And use ` ` when you want use a variable 
+                                    // That is cute girl good luck ! 
+                                    ` <a class="btn btn-default btnVisit" target="_blank" rel="noreferrer" href="https://${url}.com">Visit</a>`+
 
                                     ' <a onclick="deleteBookmark(\''+url+'\')" href="#"><i class="far fa-trash-alt trashIcon"></i></a>'+
 
